@@ -1,0 +1,42 @@
+.toast-container {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 25px;
+    padding: 20px;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 300px;
+    overflow-x: hidden;
+
+    .toast {
+        border: 1px solid #269559;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #d7f6d7;
+        color: #269559;
+        box-shadow: 1px 1px 5px #bbbbbb;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        animation: slide-in 0.2s ease-out;
+
+        button.close {
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: #269559;
+        }
+    }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

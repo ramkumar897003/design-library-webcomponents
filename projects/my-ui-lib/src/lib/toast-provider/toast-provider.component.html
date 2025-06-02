@@ -1,0 +1,15 @@
+<ng-container>
+    <ng-content />
+    @let toasts = toastService.toasts$ | async; @if(toasts?.length) {
+    <div class="toast-container">
+        @for(toast of toasts; track toast.id) {
+        <div class="toast">
+            <span>{{ toast.title }}</span>
+            <button class="close" (click)="toastService.removeToast(toast.id)">
+                &#x2715;
+            </button>
+        </div>
+        }
+    </div>
+    }
+</ng-container>
